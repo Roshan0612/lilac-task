@@ -1,8 +1,17 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function SplitSection() {
   return (
-    <section className="bg-[#1F3A1F] text-white">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="bg-[#1F3A1F] text-white"
+    >
       <div className="w-full flex flex-col lg:flex-row">
 
         {/* Right Image Section - Mobile Top / Desktop 50% */}
@@ -38,6 +47,6 @@ export default function SplitSection() {
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -1,6 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function CTA() {
   return (
-    <section className="bg-[#8B9D5A] text-white py-[12vw] md:py-[8vw] lg:py-[6vw] px-[6vw]">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="bg-[#8B9D5A] text-white py-[12vw] md:py-[8vw] lg:py-[6vw] px-[6vw]"
+    >
       <div className="max-w-[1000px] mx-auto text-center">
         {/* Heading */}
         <h2 className="text-[8vw] md:text-[5vw] lg:text-[3.5vw] font-light leading-[1.2] mb-[4vw] md:mb-[3vw] lg:mb-[2vw]">
@@ -17,6 +27,6 @@ export default function CTA() {
           Get in touch →
         </button>
       </div>
-    </section>
+    </motion.section>
   );
 }

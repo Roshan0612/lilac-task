@@ -1,10 +1,19 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const officeImage = "/image/office1.jpeg";
 
 export default function OurOffice() {
   return (
-    <section className="bg-[#EAE4DC] text-[#1F3A1F] py-[10vw] lg:py-[6vw]">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="bg-[#EAE4DC] text-[#1F3A1F] py-[10vw] lg:py-[6vw]"
+    >
       <div className="w-full px-[6vw]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[6vw] lg:gap-[3vw] items-center">
           <div>
@@ -28,6 +37,6 @@ export default function OurOffice() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

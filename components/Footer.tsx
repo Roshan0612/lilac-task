@@ -1,6 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Footer() {
   return (
-    <footer className="bg-[#EAE4DC] text-[#1F3A1F]">
+    <motion.footer
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="bg-[#EAE4DC] text-[#1F3A1F]"
+    >
       {/* Main Footer Content */}
       <div className="px-[6vw] py-[8vw] lg:py-[4vw]">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-[6vw] lg:gap-[4vw] mb-[6vw] lg:mb-[4vw] text-center lg:text-left">
@@ -97,6 +107,6 @@ export default function Footer() {
           All Rights Reserved © 2024 Your Business Name Here, LLC.
         </p>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

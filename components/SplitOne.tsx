@@ -1,8 +1,17 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function SplitOne() {
   return (
-    <section className="w-full flex flex-col md:flex-row">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="w-full flex flex-col md:flex-row"
+    >
       {/* Left Image - Mobile Top / Tablet+ 50% */}
       <div className="w-full md:w-1/2 relative h-[60vw] md:h-auto md:min-h-[700px]">
         <Image
@@ -48,6 +57,6 @@ export default function SplitOne() {
           Work with me →
         </button>
       </div>
-    </section>
+    </motion.section>
   );
 }

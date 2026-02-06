@@ -1,8 +1,17 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="w-full flex flex-col md:flex-row bg-[#EAE4DC]">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="w-full flex flex-col md:flex-row bg-[#EAE4DC]"
+    >
       {/* Images Section - Mobile Top / Tablet+ Right */}
       <div className="w-full md:w-1/2 relative h-[95vw] md:h-auto md:min-h-[600px] flex items-center justify-center md:pr-[24px] lg:pr-[80px] order-first md:order-last">
         {/* Image Stack Wrapper */}

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const faqs = [
 	{
@@ -17,7 +20,13 @@ const faqs = [
 
 export default function FAQ() {
 	return (
-		<section className="bg-[#EAE4DC] text-[#1F3A1F] py-[10vw] md:py-[8vw] lg:py-[100px]">
+		<motion.section
+			initial={{ opacity: 0, y: 50 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, margin: "-100px" }}
+			transition={{ duration: 0.6, ease: "easeOut" }}
+			className="bg-[#EAE4DC] text-[#1F3A1F] py-[10vw] md:py-[8vw] lg:py-[100px]"
+		>
 			<div className="w-full flex flex-col md:flex-row">
 				{/* Left Image - Mobile Top / Desktop 50% */}
 				<div className="w-full md:w-1/2 flex items-center justify-center p-[6vw] md:p-[4vw]">
@@ -52,6 +61,4 @@ export default function FAQ() {
 					</div>
 				</div>
 			</div>
-		</section>
-	);
-}
+	</motion.section>

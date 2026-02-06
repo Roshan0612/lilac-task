@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Specialities() {
   const specialties = [
@@ -23,7 +26,13 @@ export default function Specialities() {
   ];
 
   return (
-    <section className="bg-[#EAE4DC] text-[#1F3A1F] py-[10vw] lg:py-[6vw]">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="bg-[#EAE4DC] text-[#1F3A1F] py-[10vw] lg:py-[6vw]"
+    >
       <div className="w-full px-[6vw]">
         {/* Heading */}
         <h2 className="text-[7vw] lg:text-[3.5vw] font-semibold text-center mb-[8vw] lg:mb-[4vw]">
@@ -62,6 +71,6 @@ export default function Specialities() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

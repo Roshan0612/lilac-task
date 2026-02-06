@@ -1,8 +1,16 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="bg-[#EAE4DC] text-[#1F3A1F] min-h-screen lg:min-h-screen flex items-center py-[8vw] lg:py-0">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-[#EAE4DC] text-[#1F3A1F] min-h-screen lg:min-h-screen flex items-center py-[8vw] lg:py-0"
+    >
       <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-[4vw] lg:gap-[6vw] px-0 lg:px-0 lg:pl-[6vw] lg:pr-[6vw]">
 
         {/* Image */}
@@ -33,6 +41,6 @@ export default function Hero() {
 
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const backgroundItems = [
   {
     title: "Education",
@@ -15,7 +19,13 @@ const backgroundItems = [
 
 export default function ProfessionalBackground() {
   return (
-    <section className="bg-[#EAE4DC] text-[#1F3A1F] py-[10vw] md:py-[8vw] lg:py-[6vw]">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="bg-[#EAE4DC] text-[#1F3A1F] py-[10vw] md:py-[8vw] lg:py-[6vw]"
+    >
       <div className="max-w-[1200px] mx-auto px-[6vw]">
         {/* Heading */}
         <h2 className="text-[7vw] md:text-[4vw] lg:text-[3.6vw] font-semibold text-center mb-[6vw] md:mb-[4vw] lg:mb-[3vw]">
@@ -39,6 +49,6 @@ export default function ProfessionalBackground() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
