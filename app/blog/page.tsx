@@ -141,10 +141,16 @@ export default function BlogPage() {
 
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Subscribe Section */}
-        <section className="w-full bg-[#8B9D5A] py-[10vw] lg:py-[6vw] px-[6vw]">
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-full bg-[#8B9D5A] py-[10vw] lg:py-[6vw] px-[6vw]"
+        >
           <div className="max-w-[1100px] mx-auto">
             <div className="border-2 border-white py-[10vw] lg:py-[6vw] px-[8vw] lg:px-[10vw] flex flex-col items-center">
               {/* Heading */}
@@ -175,7 +181,7 @@ export default function BlogPage() {
               </p>
             </div>
           </div>
-        </section>
+        </motion.section>
       </main>
 
       <Footer />

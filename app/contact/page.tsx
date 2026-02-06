@@ -1,9 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-"use client";
+export default function ContactPage() {
   return (
     <>
       <Navbar />
@@ -156,10 +158,16 @@ import Footer from "@/components/Footer";
             </div>
 
           </div>
-        </section>
+        </motion.section>
 
         {/* Find me on Social Section */}
-        <section className="w-full bg-[#EAE4DC] py-[10vw] lg:py-[8vw] px-[6vw]">
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-full bg-[#EAE4DC] py-[10vw] lg:py-[8vw] px-[6vw]"
+        >
           <div className="max-w-[1200px] mx-auto">
             {/* Heading */}
             <h2 className="text-[8vw] lg:text-[4vw] font-semibold text-[#1F3A1F] mb-[8vw] lg:mb-[6vw]">
@@ -211,7 +219,7 @@ import Footer from "@/components/Footer";
 
             </div>
           </div>
-        </section>
+        </motion.section>
       </main>
 
       <Footer />
