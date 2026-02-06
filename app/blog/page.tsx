@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -11,7 +12,12 @@ export default function BlogPage() {
       
       <main className=" bg-[#EAE4DC]  text-[#1F3A1F]">
         {/* Hero Section - Flexible Layout */}
-        <section className="w-full flex flex-col lg:flex-row items-center lg:items-center min-h-screen lg:min-h-[700px]">
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full flex flex-col lg:flex-row items-center lg:items-center min-h-screen lg:min-h-[700px]"
+        >
           {/* Image - Flexible sizing */}
           <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-start pt-[8vw] lg:pt-0 lg:pl-[6vw]">
             <div className="relative w-[min(70vw,420px)] h-[min(90vw,520px)] lg:w-[550px] lg:h-[750px] rounded-t-full overflow-hidden">
@@ -43,10 +49,16 @@ export default function BlogPage() {
               </p>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Blog Posts Section */}
-        <section className="w-full px-[6vw] py-[8vw]">
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-full px-[6vw] py-[8vw]"
+        >
           <div className="max-w-[1200px] mx-auto">
             {/* Blog Posts Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[4vw] lg:gap-[3vw]">

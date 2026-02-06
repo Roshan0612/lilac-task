@@ -62,3 +62,5 @@ export default function FAQ() {
 				</div>
 			</div>
 	</motion.section>
+	);
+}

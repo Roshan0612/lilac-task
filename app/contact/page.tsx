@@ -1,15 +1,22 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export default function ContactPage() {
+"use client";
   return (
     <>
       <Navbar />
       
       <main className="bg-[#D3D3D3] text-[#1F3A1F]">
         {/* Let's Connect Section */}
-        <section className="w-full min-h-screen flex flex-col lg:flex-row items-start px-[6vw] py-[12vw] lg:py-[8vw] gap-[8vw] lg:gap-[4vw]">
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-full min-h-screen flex flex-col lg:flex-row items-start px-[6vw] py-[12vw] lg:py-[8vw] gap-[8vw] lg:gap-[4vw]"
+        >
           
           {/* Left Content - Text and Images */}
           <div className="w-full lg:w-[50%] flex flex-col">
@@ -56,10 +63,16 @@ export default function ContactPage() {
             </p>
           </div>
 
-        </section>
+        </motion.section>
 
         {/* Book an Appointment Section */}
-        <section className="w-full bg-[#EAE4DC] py-[12vw] lg:py-[8vw] px-[6vw]">
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-full bg-[#EAE4DC] py-[12vw] lg:py-[8vw] px-[6vw]"
+        >
           <div className="max-w-[900px] mx-auto flex flex-col items-center">
             {/* Heading */}
             <h2 className="text-[8vw] lg:text-[3.5vw] font-semibold text-[#1F3A1F] mb-[6vw] lg:mb-[4vw] text-center">
@@ -90,10 +103,16 @@ export default function ContactPage() {
               <p className="text-[4vw] lg:text-[1.2vw] font-semibold text-[#1F3A1F]">acuity:scheduling</p>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* My Office Section */}
-        <section className="w-full bg-[#8B9D5A] py-[10vw] lg:py-[8vw] px-[6vw]">
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-full bg-[#8B9D5A] py-[10vw] lg:py-[8vw] px-[6vw]"
+        >
           <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-stretch gap-[8vw] lg:gap-[4vw]">
             
             {/* Left Content - Office Info */}
