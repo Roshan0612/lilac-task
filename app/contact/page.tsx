@@ -37,33 +37,60 @@ export default function ContactPage() {
             {/* Overlapping Images */}
             <div className="relative w-full h-[90vw] lg:h-[40vw]">
               {/* Back Image - Arch Top Rectangle */}
-              <div className="relative w-[70vw] h-[85vw] lg:w-[30vw] lg:h-[36vw] rounded-t-full overflow-hidden">
+              <motion.div 
+                className="relative w-[70vw] h-[85vw] lg:w-[30vw] lg:h-[36vw] rounded-t-full overflow-hidden"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                whileHover={{ scale: 1.05 }}
+              >
                 <Image
                   src="/image/office1.jpeg"
                   alt="Flowers"
                   fill
                   className="object-cover"
                 />
-              </div>
+              </motion.div>
 
               {/* Front Image - Circle (Overlapping) */}
-              <div className="absolute bottom-[-5vw] lg:bottom-[-2vw] left-[42vw] lg:left-[18vw] w-[55vw] h-[55vw] lg:w-[24vw] lg:h-[24vw] rounded-full overflow-hidden">
+              <motion.div 
+                className="absolute bottom-[-5vw] lg:bottom-[-2vw] left-[42vw] lg:left-[18vw] w-[55vw] h-[55vw] lg:w-[24vw] lg:h-[24vw] rounded-full overflow-hidden"
+                initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+                whileHover={{ scale: 1.08 }}
+              >
                 <Image
                   src="/image/office1.jpeg"
                   alt="Flowers"
                   fill
                   className="object-cover"
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
 
           {/* Right Content - Green Note Box */}
-          <div className="w-full lg:w-[40%] bg-[#1F3A1F] p-[6vw] lg:p-[3vw] lg:mt-[2vw] lg:min-h-[320px] flex items-center">
-            <p className="text-[3.8vw] lg:text-[1.05vw] text-[#EAE4DC] leading-[1.7]">
+          <motion.div 
+            className="w-full lg:w-[40%] bg-[#1F3A1F] p-[6vw] lg:p-[3vw] lg:mt-[2vw] lg:min-h-[320px] flex items-center"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            whileHover={{ boxShadow: "0 10px 40px rgba(0,0,0,0.3)" }}
+          >
+            <motion.p 
+              className="text-[3.8vw] lg:text-[1.05vw] text-[#EAE4DC] leading-[1.7]"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
               <span className="font-semibold">PLEASE NOTE:</span> If you opt to use a "Form Block" on your contact page this is not HIPAA-compliant. Squarespace stores data that is input into forms in the Marketing tab under Profiles. Instead, you can embed a HIPAA-compliant form, a link to your client portal, or simply put your email address.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
         </motion.section>
 
@@ -94,9 +121,17 @@ export default function ContactPage() {
               <p className="text-[3.5vw] lg:text-[1vw] text-[#1F3A1F] mb-[5vw] text-center leading-[1.6]">
                 If you're the owner, please log into your account to start a free trial or subscribe.
               </p>
-              <button className="px-[6vw] lg:px-[2.5vw] py-[2.5vw] lg:py-[0.8vw] bg-black text-white text-[3.5vw] lg:text-[1vw] font-semibold hover:opacity-80 transition-opacity">
+              <motion.button 
+                className="px-[6vw] lg:px-[2.5vw] py-[2.5vw] lg:py-[0.8vw] bg-black text-white text-[3.5vw] lg:text-[1vw] font-semibold hover:opacity-80 transition-opacity"
+                whileHover={{ scale: 1.08, boxShadow: \"0 8px 16px rgba(0,0,0,0.3)\" }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: \"-100px\" }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
                 GO TO ACCOUNT
-              </button>
+              </motion.button>
             </div>
 
             {/* Powered by Text */}
@@ -118,34 +153,74 @@ export default function ContactPage() {
           <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-stretch gap-[8vw] lg:gap-[4vw]">
             
             {/* Left Content - Office Info */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-start text-white">
+            <motion.div 
+              className="w-full lg:w-1/2 flex flex-col justify-start text-white"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
               {/* My Office Heading */}
-              <h2 className="text-[8vw] lg:text-[3.5vw] font-semibold mb-[4vw] lg:mb-[3vw]">
+              <motion.h2 
+                className="text-[8vw] lg:text-[3.5vw] font-semibold mb-[4vw] lg:mb-[3vw]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: 0.1, duration: 0.6 }}
+              >
                 My Office
-              </h2>
+              </motion.h2>
 
               {/* Address */}
-              <div className="mb-[8vw] lg:mb-[5vw]">
+              <motion.div 
+                className="mb-[8vw] lg:mb-[5vw]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+              >
                 <p className="text-[4vw] lg:text-[1.2vw] leading-[1.8]">
                   123 Example Street<br/>
                   Minneapolis, MN
                 </p>
-              </div>
+              </motion.div>
 
               {/* Hours Section */}
-              <h3 className="text-[8vw] lg:text-[3.5vw] font-semibold mb-[3vw] lg:mb-[2vw]">
+              <motion.h3 
+                className="text-[8vw] lg:text-[3.5vw] font-semibold mb-[3vw] lg:mb-[2vw]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
                 Hours
-              </h3>
+              </motion.h3>
 
-              <p className="text-[4vw] lg:text-[1.2vw] leading-[1.8]">
+              <motion.p 
+                className="text-[4vw] lg:text-[1.2vw] leading-[1.8]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
                 Monday – Friday<br/>
                 10am – 6pm
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Right Content - Google Map */}
-            <div className="w-full lg:w-1/2">
-              <div className="relative w-full h-[60vw] lg:h-[450px] rounded-lg overflow-hidden shadow-lg">
+            <motion.div 
+              className="w-full lg:w-1/2"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <motion.div 
+                className="relative w-full h-[60vw] lg:h-[450px] rounded-lg overflow-hidden shadow-lg"
+                whileHover={{ boxShadow: "0 20px 50px rgba(0,0,0,0.4)" }}
+              >
                 <iframe
                   width="100%"
                   height="100%"
@@ -154,8 +229,8 @@ export default function ContactPage() {
                   allowFullScreen=""
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.1234567890!2d-93.2654!3d44.9699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b3329ce77d77ed%3A0x1234567890!2sMinneapolis%2C%20MN!5e0!3m2!1sen!2sus!4v1234567890"
                 ></iframe>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
           </div>
         </motion.section>
@@ -175,49 +250,92 @@ export default function ContactPage() {
             </h2>
 
             {/* Social Images Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-[3vw] lg:gap-[2.5vw]">
+            <motion.div 
+              className="grid grid-cols-2 lg:grid-cols-4 gap-[3vw] lg:gap-[2.5vw]"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.15,
+                    delayChildren: 0.1
+                  }
+                }
+              }}
+            >
               
               {/* Social Image 1 */}
-              <div className="relative w-full aspect-square rounded-lg overflow-hidden">
+              <motion.div 
+                className="relative w-full aspect-square rounded-lg overflow-hidden"
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                }}
+                whileHover={{ scale: 1.08, boxShadow: "0 10px 30px rgba(0,0,0,0.2)" }}
+              >
                 <Image
                   src="/image/office1.jpeg"
                   alt="Social Post 1"
                   fill
-                  className="object-cover hover:opacity-90 transition-opacity"
+                  className="object-cover"
                 />
-              </div>
+              </motion.div>
 
               {/* Social Image 2 */}
-              <div className="relative w-full aspect-square rounded-lg overflow-hidden">
+              <motion.div 
+                className="relative w-full aspect-square rounded-lg overflow-hidden"
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                }}
+                whileHover={{ scale: 1.08, boxShadow: "0 10px 30px rgba(0,0,0,0.2)" }}
+              >
                 <Image
                   src="/image/office1.jpeg"
                   alt="Social Post 2"
                   fill
-                  className="object-cover hover:opacity-90 transition-opacity"
+                  className="object-cover"
                 />
-              </div>
+              </motion.div>
 
               {/* Social Image 3 */}
-              <div className="relative w-full aspect-square rounded-lg overflow-hidden">
+              <motion.div 
+                className="relative w-full aspect-square rounded-lg overflow-hidden"
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                }}
+                whileHover={{ scale: 1.08, boxShadow: "0 10px 30px rgba(0,0,0,0.2)" }}
+              >
                 <Image
                   src="/image/office1.jpeg"
                   alt="Social Post 3"
                   fill
-                  className="object-cover hover:opacity-90 transition-opacity"
+                  className="object-cover"
                 />
-              </div>
+              </motion.div>
 
               {/* Social Image 4 */}
-              <div className="relative w-full aspect-square rounded-lg overflow-hidden">
+              <motion.div 
+                className="relative w-full aspect-square rounded-lg overflow-hidden"
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                }}
+                whileHover={{ scale: 1.08, boxShadow: "0 10px 30px rgba(0,0,0,0.2)" }}
+              >
                 <Image
                   src="/image/office1.jpeg"
                   alt="Social Post 4"
                   fill
-                  className="object-cover hover:opacity-90 transition-opacity"
+                  className="object-cover"
                 />
-              </div>
+              </motion.div>
 
-            </div>
+            </motion.div>
           </div>
         </motion.section>
       </main>
